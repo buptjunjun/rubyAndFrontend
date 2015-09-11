@@ -1,0 +1,44 @@
+<style>
+  .box
+  {
+      width:1000px;
+      margin:auto;
+
+  }
+</style>
+
+
+<!--ajax 提交form-->
+<div class="box">
+
+    <p>ajax提交form</p>
+    <form id="form1">
+      <span>消息:</span><input name="msg" value="msg">
+    </form>
+    <button id="form1_btn">提交</button>
+</div>
+
+<script>
+    $(function(){
+
+        <!--ajax 提交form-->
+        $("#form1_btn").on("click",function(){
+            $.ajax({
+                type: "POST",
+                url:"/jstest/ajax1",
+                data: $("#form1").serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("error");
+                },
+                success: function(data) {
+                    alert(JSON.stringify(data));
+                }
+            });
+            return false;
+        });
+        <!--ajax 提交form end -->
+
+
+    });
+</script>

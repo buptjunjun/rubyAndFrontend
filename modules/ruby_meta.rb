@@ -154,6 +154,24 @@ end
 TestModuleBoth.static_method
 TestModuleBoth.new.instance_method
 
+puts "一个对象extend一个方法"
+class NeedMorePower
+
+end
+
+n1 = NeedMorePower.new
+#没有这个方法
+begin
+  n1.instance_method
+rescue => e
+  puts e.to_s
+end
+
+n2 = NeedMorePower.new
+n2.extend(CommonMethodAgain) #扩展了一个CommonMethodAgain的方法
+n2.instance_method
+#n2.class.static_method #会报错
+
 puts "respond_to? 和 method_missing"
 =begin
   respond_to?查看一个对象是否能响应某个方法
@@ -170,3 +188,45 @@ mycar = MyOpenstruct.new
 mycar.width = 123
 puts mycar.respond_to?(:width)
 
+
+puts "\n==白板类"
+
+class BlankClass
+
+  def method_missing(method, *args , &block)
+     if method.to_s == "display"
+       puts "display in method_missing"
+     end
+  end
+end
+
+bc1 = BlankClass.new
+puts "Object 的方法，#{Object.instance_methods(true).grep(/display/)}" #打印Object的方法
+bc1.display #因为object有display类，所有不会打印 "display in method_missing"
+
+=begin
+  1.我们在给一个类通过method_missing提供动态方法的时候，有时候会忽略这个对象已经有了同名的方法(method_missing里面的代码就得不到调用)，这时候我们需要将原来的方法删掉。
+  2.将原来对象的所有方法都删掉，这个对象就成为了一个白板类。
+  3.如果将一个类全部实例方法都删掉了也会出问题，比如 send 方法 method_missing方法这些就不能删除，为了保留一些核心的方法，ruby将这些方法进行了重命名，在前后都加入了两个下划线，为__send__.所有以“__”开头的不要删除。
+=end
+class BlankClass
+
+  #不隐藏以__和"instance_eval"打头的方法
+  def self.hide(method)
+    if instance_methods.include?(method.to_s) and method.to_s !~ /^(__|instance_eval)/
+      @hidden_methods ||= {}
+      @hidden_methods[method.to_s] = instance_method(method.to_s)
+      puts "undefined #{method.to_s}"
+      undef_method method.to_s
+    end
+  end
+
+  instance_methods.each do |m|
+    undef_method m unless m.to_s =~ /^__|method_missing|respond_to?/
+  end
+
+end
+
+bc2 = BlankClass.new
+puts "\n"
+bc2.display #打印 "display in method_missing"
