@@ -4,4 +4,8 @@ class BootstrapController < ApplicationController
 
   end
 
+  def form
+
+  end
+
 end

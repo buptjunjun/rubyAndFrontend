@@ -57,6 +57,8 @@ RubyAndFrontend::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
 
   get "bootstrap/modal" => "bootstrap#modal"
+  get "bootstrap/form" => "bootstrap#form"
+
   post "jstest/ajax1"=>"js#ajax1"
   get "jstest/jquery"=>"js#jquery"
 end

@@ -1,0 +1,88 @@
+
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<h2>
+  bootstrap 提供三种form布局:1.垂直，内联，水平
+</h2>
+
+<h3>
+  垂直: 向 from 元素添加role="form"
+</h3>
+
+<form role="form" class="form">
+
+  <div class="form-group">
+    <label for="name">name:</label>
+    <input id="name" name="name" placeholder="input your name">
+  </div>
+
+  <div class="form-group">
+    <label for="age">age:</label>
+    <input id="age" name="age" placeholder="input your age">
+  </div>
+
+  <div class="checkbox">
+    <label >  <input type="checkbox" name="intrest" > apple</label>
+    <label >  <input type="checkbox" name="intrest" > orange</label>
+  </div>
+
+  <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+
+
+<h3>
+  内联: 向 from 元素添加role="form" class="form-inline" 内联表单的排列是从左向右排列的
+</h3>
+
+<form class="form-inline" role="form">
+
+  <div class="form-group">
+    <label for="name">name:</label>
+    <input id="name" name="name" placeholder="input your name">
+  </div>
+
+
+  <div class="form-group">
+    <label for="age">age:</label>
+    <input id="age" name="age" placeholder="input your age">
+  </div>
+
+
+  <div class="checkbox">
+    <label >  <input type="checkbox" name="intrest" > apple</label>
+    <label >  <input type="checkbox" name="intrest" > orange</label>
+  </div>
+
+  <button type="submit" class="btn btn-default">提交</button>
+</form>
+
+
+<h3>
+  水平表单: 向 from 元素添加role="form" class="form-horizontal"
+</h3>
+
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <div class="col-sm-2 control-label"><label for="name">name:</label></div>
+    <div class="col-sm-10"><input class="form-control" id="name" name="name" placeholder="input your name"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-2 control-label"><label for="name">age:</label></div>
+    <div class="col-sm-10"><input class="form-control" id="age" name="age" placeholder="input your age"></div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-10 col-sm-offset-2">
+      <div class="checkbox ">
+        <label >  <input type="checkbox" name="intrest" > apple</label>
+        <label >  <input type="checkbox" name="intrest" > orange</label>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-default">提交</button>
+</form>

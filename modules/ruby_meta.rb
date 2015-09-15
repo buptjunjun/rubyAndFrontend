@@ -2,7 +2,10 @@
 
 require 'ostruct'
 #ruby元编程实践
-puts "第一章"
+puts "\n==================\n"
+puts "第一章 对象模型"
+puts "==================\n"
+
 class Test
 
 end
@@ -10,9 +13,12 @@ end
 #method_missing
 puts Test.ancestors
 
+puts "\n==================\n"
 puts "第二章"
 puts "一 ruby的方法"
 puts "一 ruby的动态派发"
+puts "==================\n"
+
 
 class Test
   #动态定义方法
@@ -222,7 +228,7 @@ class BlankClass
   end
 
   instance_methods.each do |m|
-    undef_method m unless m.to_s =~ /^__|method_missing|respond_to?/
+    undef_method m unless m.to_s =~ /^__|method_missing|respond_to?|object_id/
   end
 
 end
@@ -230,3 +236,206 @@ end
 bc2 = BlankClass.new
 puts "\n"
 bc2.display #打印 "display in method_missing"
+
+
+puts "\n==================\n"
+puts "块 block"
+puts "==================\n"
+
+
+=begin
+  1.只用在“调用”方法时候才能定义一个块
+  2.可以定义在{}中和do end中 可以传入参数
+  3.块会传入方法，在方法中用yield调用这个块
+=end
+def a_method(a,b)
+  a+b+yield(a)
+end
+
+puts a_method(1,2) {|x| x*10} #13
+
+#可以在函数内部判断是否有块 使用block_given
+def b_method
+  return yield if block_given?
+  "no block "
+end
+
+puts b_method #no block
+puts b_method { "here is a block" } #here is a block
+
+
+puts "==用代码块来做一个资源自动释放的列子"
+class Resouse
+
+  def use
+    puts "use resource #{self}"
+  end
+
+  def dispose
+    puts "disposed #{self}"
+  end
+
+end
+
+module Kernel #打开kernel 加入一个using
+
+  def using(resouse)
+    begin
+      yield
+    ensure
+      resouse.dispose
+    end
+  end
+end
+
+#用完r1后会在ensure中自动dispose这个资源
+r1 = Resouse.new
+using(r1) do
+  r1.use
+end
+
+
+def block_with_binding
+  x = "goodby"
+  yield("cruel")
+end
+
+x = "hello"
+puts block_with_binding {|y| "#{x} ,#{y} world"}
+
+
+puts "\n==元类"
+
+class MyClass
+  def my_method
+    puts "in MyClass my_method "
+  end
+end
+
+obj = MyClass.new
+obj.my_method
+def obj.my_singleton_method
+  puts "in MyClass my_singleton_method "
+end
+obj.my_singleton_method
+
+#使用 ”class <<“ 进入一个对象的eigenclass的作用域
+eigenclass = class << obj
+  self
+end
+puts eigenclass
+puts eigenclass.class
+puts eigenclass.instance_methods(false).join(",") #my_singleton_method
+
+class C
+  def a_method
+    puts "C#a_method()"
+  end
+end
+
+class D < C
+end
+
+
+obj = D.new
+obj.a_method
+
+
+#打开Object类加入一个eigenclass的方法
+class Object
+  def eigenclass
+    class << self
+      self;
+    end
+  end
+end
+
+puts "aaa".eigenclass
+
+#进入obj的单间类顶一个单件方法
+class << obj
+  def a_singleton_method
+    'puts obj#a_singleton_nethod()'
+  end
+end
+
+puts obj.a_singleton_method
+
+
+puts "三种定义类方法的的方式"
+class MyClass
+  def self.my_method_1
+   return  "Myclass#my_method_1"
+  end
+end
+
+def MyClass.my_method_2
+  return "Myclass#my_method_2"
+end
+
+#在类对象的eigenclass中定义个类方法
+class MyClass
+  class << self
+    def my_method_3
+      return "Myclass#my_method_3"
+    end
+  end
+end
+
+puts MyClass.my_method_1
+puts MyClass.my_method_2
+puts MyClass.my_method_3
+
+#object的suerClass是D
+puts obj.eigenclass.superclass #D
+
+puts "eigenclass的eigenclass"
+class << "aaa"
+  class << self
+    puts self #<Class:#<Class:#<String:0x007fa6a30372e8>>>
+  end
+end
+
+
+obj = D.new
+puts "对象的eigenclass的超类是这个对象的类"
+puts obj.eigenclass
+puts obj.eigenclass.superclass
+
+puts "类的eigenclass的超类是这个类超类的eigenclass"
+puts D.eigenclass ##<Class:D>
+puts D.eigenclass.superclass #<Class:C>
+
+puts "=对象模型的应用 atrr_accessor"
+#attr_accessor
+class MyClass
+  attr_accessor :a
+end
+
+obj = MyClass.new
+obj.a = 1
+puts obj.a
+
+puts "如果给类创建属性呢"
+class MyClass
+  class << self
+    attr_accessor :classAttr
+  end
+end
+
+MyClass.classAttr = 123
+puts MyClass.classAttr
+
+puts "==eigenclass与Module"
+puts "下面这样将module include进去作为一个类的类方法会出问题"
+module TestModule1
+ def self.my_mehtod_4
+   "hello"
+ end
+end
+
+class MyClass
+  include TestModule1;
+end
+
+#MyClass.my_mehtod_4 # undefined method `my_mehtod_4' for MyClass:Class (NoMethodError)
