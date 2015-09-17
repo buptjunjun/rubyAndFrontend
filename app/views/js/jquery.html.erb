@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="/css/jquery.datetimepicker.css"/>
+<script type="text/javascript" src="/js/jquery.datetimepicker.js"></script>
+
 <style>
   .box
   {
@@ -11,11 +14,18 @@
 <!--ajax 提交form-->
 <div class="box">
 
-    <p>ajax提交form</p>
+    <h3>ajax提交form</h3>
     <form id="form1">
       <span>消息:</span><input name="msg" value="msg">
     </form>
     <button id="form1_btn">提交</button>
+</div>
+
+<div class="box">
+    <h3>time picker(时间选择器)</h3>
+    <form>
+      label:<input id="datePicker" value="">
+    </form>
 </div>
 
 <script>
@@ -40,5 +50,12 @@
         <!--ajax 提交form end -->
 
 
+    });
+
+
+    $('#datePicker').datetimepicker({
+        timepicker:false,
+        format:'Y-m-d',
+        formatDate:'Y-m-d'
     });
 </script>

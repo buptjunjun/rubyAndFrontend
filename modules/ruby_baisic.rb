@@ -1198,3 +1198,19 @@ puts isBlank?(" aa ")
 "123,123,234".scan(/\d+/) do |arg|
   puts arg
 end
+
+
+
+
+module TestModule
+  class TestClass
+    def self.test
+      puts "test"
+    end
+  end
+
+  TestModule::TestClass.test
+end
+
+TestModule::TestClass.test
+puts "over"
