@@ -11,7 +11,7 @@ class Test
 end
 
 #method_missing
-puts Test.ancestors
+puts Test.ancestors.join(" | ")
 
 puts "\n==================\n"
 puts "第二章"
@@ -439,3 +439,27 @@ class MyClass
 end
 
 #MyClass.my_mehtod_4 # undefined method `my_mehtod_4' for MyClass:Class (NoMethodError)
+
+puts "= mixin的module 不会覆盖原来类里面的方法"
+class TestModule11
+  def hello
+    puts "hello TestModule11"
+  end
+end
+
+module Test11
+  def hello
+    puts "hello Test11"
+  end
+
+  def over
+    puts "over Test11"
+  end
+end
+
+class TestModule11
+  include Test11
+end
+
+TestModule11.new.hello #hello TestModule11
+TestModule11.new.over #over Test11

@@ -592,6 +592,7 @@ my_obj.method2 #method2 in childclass
 puts "name = #{my_obj.name}"
 puts "age = #{my_obj.age}"
 
+puts my_obj.is_ins
 puts "---覆写现有类的方法---"
 class String 
   def length  #复写String类的length方法
@@ -1193,14 +1194,10 @@ puts isBlank?("")
 puts isBlank?("  ")
 puts isBlank?(" aa ")
 
-
 #String#scan
 "123,123,234".scan(/\d+/) do |arg|
   puts arg
 end
-
-
-
 
 module TestModule
   class TestClass
@@ -1214,3 +1211,9 @@ end
 
 TestModule::TestClass.test
 puts "over"
+
+
+abcd = {test:"abc"}
+puts abcd
+
+
