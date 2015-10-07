@@ -40,4 +40,5 @@ gem 'jquery-rails'
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
+gem 'stomp'
 #bootstrap end
