@@ -61,4 +61,7 @@ RubyAndFrontend::Application.routes.draw do
 
   post "jstest/ajax1"=>"js#ajax1"
   get "jstest/jquery"=>"js#jquery"
+
+  get "railstest/index"=>"railstest#index"
+  post "railstest/upload"=>"railstest#upload"
 end
