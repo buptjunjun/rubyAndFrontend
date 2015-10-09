@@ -11,8 +11,7 @@ proxy_addr = '58.220.10.7'
 proxy_port = 80
 
 #打开一个连接,并设置代理
-#http = Net::HTTP.new(uri.host, nil, proxy_addr, proxy_port);
-http = Net::HTTP.new(uri.host, nil, nil, nil);
+http = Net::HTTP.new(uri.host, nil, proxy_addr, proxy_port);
 
 http.read_timeout=10 #设置读取超时时间
 http.open_timeout=10 #设置链接超时时间
@@ -26,5 +25,3 @@ res = http.start { |http|
 }
 puts res.code #http staus
 puts res.body #内容
-
-IO.write("iteye.html", res.body)

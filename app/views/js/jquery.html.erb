@@ -28,6 +28,11 @@
     </form>
 </div>
 
+
+<div class="box" id="test1">
+
+</div>
+
 <script>
     $(function(){
 
@@ -58,4 +63,20 @@
         format:'Y-m-d',
         formatDate:'Y-m-d'
     });
+
+    $.ajax({
+        type: "POST",
+        url:"/jstest/ajax1",
+        data: {"msg":1211134},// 你的formid
+        async: false,
+        error: function(request) {
+            alert("error");
+        },
+        success: function(data) {
+            console.log(JSON.stringify(data));
+
+            $("#test1").html(JSON.stringify(data));
+        }
+    });
+
 </script>

@@ -2,26 +2,21 @@
 
 require 'uri'
 require 'net/http'
+require 'nokogiri'
 
-#连接
-uri = URI('http://www.iteye.com')
+html =  IO.read(File.open(File.expand_path("../files/iteye.html",__FILE__)))
+doc = Nokogiri::HTML(html)
+#删除javascirpt代码和css代码
 
-#代理
-proxy_addr = '58.220.10.7'
-proxy_port = 80
+doc.search("script").remove
+doc.search("style").remove
 
-#打开一个连接,并设置代理
-http = Net::HTTP.new(uri.host, nil, proxy_addr, proxy_port);
+# 获取页面上所有的链接
+doc.css('a').each do |link|
+  puts "#{link.content}, #{link['href']}"
+end
 
-http.read_timeout=10 #设置读取超时时间
-http.open_timeout=10 #设置链接超时时间
+puts doc.css("body")[0].content;
 
-res = http.start { |http|
-  request = Net::HTTP::Get.new uri
-  request['User-Agent'] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36"
-  request["Accept-Language"]="en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4"
-  response = http.request request # Net::HTTPResponse object
-  #puts response.body
-}
-puts res.code #http staus
-puts res.body #内容
+#打出 meta-keywords
+puts doc.css('meta[name="keywords"]')[0]

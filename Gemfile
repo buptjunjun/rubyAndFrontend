@@ -40,5 +40,10 @@ gem 'jquery-rails'
 gem "twitter-bootstrap-rails"
 gem "therubyracer"
 gem "less-rails"
-gem 'stomp'
 #bootstrap end
+
+gem 'stomp'
+gem 'nokogiri'
+
+gem 'poltergeist'
+gem 'capybara'
