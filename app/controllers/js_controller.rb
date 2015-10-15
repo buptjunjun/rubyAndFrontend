@@ -5,7 +5,7 @@ class JsController < ApplicationController
   end
 
   def ajax1
-    sleep(5)
+    #sleep(1)
     respond_to do |format|
       format.json { render json: {"msg"=>params} }
     end

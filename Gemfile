@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'https://ruby.taobao.org'
 
 gem 'rails', '3.2.0'
 
@@ -42,8 +42,15 @@ gem "therubyracer"
 gem "less-rails"
 #bootstrap end
 
+#active mq
 gem 'stomp'
+
+#html parse
 gem 'nokogiri'
 
+#测试
 gem 'poltergeist'
 gem 'capybara'
+
+#twitter api
+gem "twitter"
