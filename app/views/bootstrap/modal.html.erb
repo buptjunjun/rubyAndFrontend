@@ -1,5 +1,20 @@
 
 
+<!--使用一个按钮来触发模态框-->
+<button class="btn btn-primary btn-lg" data-toggle="modal"  data-target="#myModal">开始演示模态框</button>
+
+<!--使用js来触发模态框-->
+<button id="trigger_btn" class="btn btn-primary btn-lg">开始演示模态框(js)</button>
+
+
+<script>
+    <!--使用js来触发模态框-->
+    $("#trigger_btn").on("click",function(){
+        console.log("trigger_btn click");
+        $("#myModal").modal("show");
+    });
+</script>
+
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -25,20 +40,41 @@
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal -->
- </div>
+</div>
 
 
-<!--使用一个按钮来触发模态框-->
-<button class="btn btn-primary btn-lg" data-toggle="modal"  data-target="#myModal">开始演示模态框</button>
+    <div style="width:600px">
+        <table class="table">
+            <tr><th>head1</th><th>head2</th></tr>
+            <tr><td>123</td><td>234</td></tr>
+            <tr><td>123</td><td>234</td></tr>
+            <tr><td>123</td><td>234</td></tr>
+        </table>
+    </div>
 
-<!--使用js来触发模态框-->
-<button id="trigger_btn" class="btn btn-primary btn-lg">开始演示模态框(js)</button>
+    <div style="width:600px">
+      <table class="table table-striped">
+        <tr><th>head1</th><th>head2</th></tr>
+        <tr><td>123</td><td>234</td></tr>
+        <tr><td>123</td><td>234</td></tr>
+        <tr><td>123</td><td>234</td></tr>
+      </table>
+    </div>
 
+    <div style="width:600px">
+      <table class="table table-striped table-bordered">
+        <tr><th>head1</th><th>head2</th></tr>
+        <tr><td>123</td><td>234</td></tr>
+        <tr><td>123</td><td>234</td></tr>
+        <tr><td>123</td><td>234</td></tr>
+      </table>
+    </div>
 
-<script>
-    <!--使用js来触发模态框-->
-    $("#trigger_btn").on("click",function(){
-        console.log("trigger_btn click");
-        $("#myModal").modal("show");
-    });
-</script>
+    <div style="width:600px">
+      <table class="table table-border table-striped table-hover">
+        <tr><th>head1</th><th>head2</th></tr>
+        <tr><td>123</td><td>234</td></tr>
+        <tr><td>123</td><td>234</td></tr>
+        <tr><td>123</td><td>234</td></tr>
+      </table>
+    </div>

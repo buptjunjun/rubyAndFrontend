@@ -1,5 +1,6 @@
 #encoding:utf-8
 require 'twitter'
+require 'json'
 
 consumerKey="fY7YfMdoW3vhbTxCxepQ"
 consumerSecret="1Ywv34rGji5eesVFVgsO7S49NQqeKL4B941knZfQ"
@@ -16,6 +17,8 @@ end
 #当前登录的用户的tweets
 tweets = client.home_timeline
 tweets.each do |t|
+  user = User.new
+  u = t.user
 
   #是否是转发的
   if t.retweeted?
@@ -32,6 +35,8 @@ tweets.each do |t|
 
   #全文
   puts t.full_text
+
+  puts t.attrs
   puts "---"
 end
 

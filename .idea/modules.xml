@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/rubyAndFrontend.iml" filepath="$PROJECT_DIR$/.idea/rubyAndFrontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../twf/.idea/twf.iml" filepath="$PROJECT_DIR$/../twf/.idea/twf.iml" />
     </modules>
   </component>
 </project>
