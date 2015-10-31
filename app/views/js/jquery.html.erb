@@ -69,6 +69,7 @@
         url:"/jstest/ajax1",
         data: {"msg":1211134},// 你的formid
         async: false,
+        beforeSend:function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},//有的请求必须要csrf-token，不然服务器会重置session，需要重新登录
         error: function(request) {
             alert("error");
         },

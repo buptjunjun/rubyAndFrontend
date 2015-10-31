@@ -592,7 +592,7 @@ my_obj.method2 #method2 in childclass
 puts "name = #{my_obj.name}"
 puts "age = #{my_obj.age}"
 
-puts my_obj.is_ins
+#puts my_obj.is_instan
 puts "---覆写现有类的方法---"
 class String 
   def length  #复写String类的length方法
@@ -1216,4 +1216,8 @@ puts "over"
 abcd = {test:"abc"}
 puts abcd
 
-
+#ruby 排序
+h = ['1','10','11','2','4']
+p h.sort
+p h.sort{|a,b| a.to_i <=> b.to_i}
+p h.sort_by{|x| x.to_i}

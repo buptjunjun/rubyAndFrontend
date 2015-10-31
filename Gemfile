@@ -54,3 +54,5 @@ gem 'capybara'
 
 #twitter api
 gem "twitter"
+
+gem 'thrift', '0.9.2'

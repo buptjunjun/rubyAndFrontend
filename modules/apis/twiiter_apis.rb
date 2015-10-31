@@ -15,10 +15,12 @@ client = Twitter::REST::Client.new do |config|
 end
 
 #当前登录的用户的tweets
-tweets = client.home_timeline
+#tweets = client.home_timeline
+
+tweets = client.user_timeline("autocorrects")
 tweets.each do |t|
-  user = User.new
-  u = t.user
+  # user = User.new
+  # u = t.user
 
   #是否是转发的
   if t.retweeted?
@@ -29,7 +31,7 @@ tweets.each do |t|
   #这条微博里面的多媒体
   if t.media and t.media.size != 0
       t.media.each  do  |m|
-        puts m.media_url
+        puts "m:"+m.media_url
       end
   end
 
