@@ -2,7 +2,7 @@
 
 <div class="container">
     <h1>测试上传文件</h1>
-    <form action="/railstest/upload" method="post">
+    <form action="/railstest/upload" method="post" enctype="multipart/form-data">
         <input name="myupload[file]" type="file"><br>
         <input type="submit">
     </form>

@@ -1,0 +1,6 @@
+module TestModule1
+    def method1
+        puts "TestModule1 txt #{@params} #{TestCurrentClass::ConstA}"
+        super();
+    end
+end

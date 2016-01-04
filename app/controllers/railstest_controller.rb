@@ -7,6 +7,7 @@ class RailstestController < ApplicationController
   def upload
     puts params.inspect
 
+    file =  params[:myupload][:file]
     redirect_to :action => :index
   end
 

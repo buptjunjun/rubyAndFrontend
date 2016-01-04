@@ -1,0 +1,10 @@
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  pool: 2
+  reconnect: true
+  host: localhost
+  database: talent201520
+  username: root
+  password:
