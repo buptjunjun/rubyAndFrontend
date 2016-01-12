@@ -46,10 +46,17 @@ puts Name.const_get("A")
 
 module ParentModule
 
+  def foo
+    puts "parent foo"
+  end
 end
 
 module ChildModule
   include  ParentModule
+
+  def foo
+    puts "child foo"
+  end
 end
 
 obj = Object
@@ -57,7 +64,7 @@ obj = Object
 obj.extend(ChildModule)
 
 puts obj.is_a? ParentModule
-
+puts obj.foo
 
 a = 123
 def time(num1,num2)
@@ -70,3 +77,24 @@ end
 time(123,123) do |x,y|
  puts  x +2
 end
+
+
+class A
+  def foo
+    puts "a"
+  end
+end
+
+class B < A
+  def foo
+    super
+    puts "b"
+  end
+end
+
+b = B.new
+b.foo
+
+b=1
+puts eval("a=1; a==b")
+puts eval("a=1; a!=b")

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <link href="../css/bootstrap.min.css" />
+
+    <style>
+        .hidden_overflow
+        {
+            overflow: hidden;
+            width:100px
+        }
+        .hidden_auto
+        {
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="dialog">
+    <p class="hidden_overflow" id="comment">
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    </p>
+  </div>
+</body>
+</html>
+
+<script>
+    $("#comment").on("click",function(){
+
+        $(this).attr("class","hidden_auto");
+        //alert($(this).text());
+    });
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Load jQuery -->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/jquery.selection.js"></script>
+    <script>
+        $(document).ready(function(){
+//            $('#do-replace').on('click', function(e){
+//                e.preventDefault();
+//                $('#textarea').selection('replace', {text: 'FOOBAR'});
+//            });
+
+            $('#sel-input').click(function(){
+                var str=$("#input").val();
+                var start=$('#input').selection("getPos")['start'];
+                var end=$('#input').selection("getPos")['end'];
+                if(start>0||end<str.length-1)
+                {
+                    //alert("he" + str[start-1]+"ll"+str[end]+"o!");
+                    if((start==0|| str[start-1]== ' '||str[start]==' ') && (str[end]==' '||str[end-1]==' '|| end>=str.length))
+                    {
+                        alert($('#input').selection());
+                    }
+                    else{
+                        alert("请你选择一个单词、一个短句或者句子!");
+                    }
+                }
+                else{
+                    alert($('#input').selection());
+                }
+                $('#input').focus();
+            });
+        });
+    </script>
+</head>
+<body>
+<p>
+    <input style="width: 900px;" id="input" value="Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts"><br />
+    <input type="button" id="sel-input" class="btn" value="获取选中文字" />
+</p>
+</body>
+</html>
