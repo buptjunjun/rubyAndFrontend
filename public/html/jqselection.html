@@ -16,10 +16,11 @@
                 var str=$("#input").val();
                 var start=$('#input').selection("getPos")['start'];
                 var end=$('#input').selection("getPos")['end'];
+                var regexp=/^[a-zA-Z]+$/;
+                //alert(start+" "+end+" "+str.length);
                 if(start>0||end<str.length-1)
                 {
-                    //alert("he" + str[start-1]+"ll"+str[end]+"o!");
-                    if((start==0|| str[start-1]== ' '||str[start]==' ') && (str[end]==' '||str[end-1]==' '|| end>=str.length))
+                    if((start==0|| str[start-1]== ' '||str[start]==' '||!regexp.test(str[start-1])) && ((str[end]==' '&&regexp.test(str[end-1]))||(str[end-1]==' '&&regexp.test(str[end-2]))|| (end>=str.length&&regexp.test(str[end-1]))||(!regexp.test(str[end])&&regexp.test(str[end-1]))))
                     {
                         alert($('#input').selection());
                     }

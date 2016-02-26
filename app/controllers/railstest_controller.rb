@@ -11,4 +11,8 @@ class RailstestController < ApplicationController
     redirect_to :action => :index
   end
 
+  def create_patients
+
+  end
+
 end

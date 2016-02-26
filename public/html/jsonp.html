@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <link href="../css/bootstrap.min.css" />
+
+    <style>
+        .hidden_overflow
+        {
+            overflow: hidden;
+            width:100px
+        }
+        .hidden_auto
+        {
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="dialog">
+    <p class="hidden_overflow" id="comment">
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    </p>
+  </div>
+
+    <button id="jsonp">jsonp</button>
+</body>
+</html>
+
+<script>
+    $("#jsonp").on("click",function(){
+
+        $.ajax({
+            url:"http://talents.baicizhan.com/tasistants/index/search.json?word=abandon",
+            dataType: 'jsonp',
+            jsonpCallback: 'photos',
+            success:function(data){
+               console.log(data);
+            }
+        });
+    });
+</script>
