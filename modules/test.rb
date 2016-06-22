@@ -66,6 +66,19 @@ obj.extend(ChildModule)
 puts obj.is_a? ParentModule
 puts obj.foo
 
+
+class GrandChild
+  include ChildModule
+
+  def foo
+    puts "hello grand child"
+  end
+end
+
+gchild = GrandChild.new
+gchild.foo
+
+
 a = 123
 def time(num1,num2)
   start = Time.now
@@ -98,3 +111,7 @@ b.foo
 b=1
 puts eval("a=1; a==b")
 puts eval("a=1; a!=b")
+
+a = 'dddd df "adsfa" ""   '
+puts
+

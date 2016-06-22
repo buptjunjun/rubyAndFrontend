@@ -2,3 +2,7 @@
 
 str = "1+2-3+5"
 str.scan(/\d+/).each{|a| puts a}add to the tail
+add to the tail
+add to the tail
+add to the tail
+add to the tail

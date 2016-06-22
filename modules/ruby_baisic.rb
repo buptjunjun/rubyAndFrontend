@@ -1006,7 +1006,8 @@ puts true & false # 相当于 puts (true & false)
   abc = 10
   begin
     abc+=1
-    print index
+    puts  index
+    puts abc;
     if index == 2
       a = 1/0;
     end
