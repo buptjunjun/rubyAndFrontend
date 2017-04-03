@@ -115,3 +115,33 @@ puts eval("a=1; a!=b")
 a = 'dddd df "adsfa" ""   '
 puts
 
+#
+#
+#
+# exec = "ffmpeg "
+#
+# `#{exec}`;
+
+
+
+a = [1,2,3]
+a.each do |i|
+  puts i
+  b = 222
+  b+=1
+  puts b
+  i+=1
+  redo if i==2
+end
+
+
+
+
+a = 2
+case a
+  when 1,2
+    puts "--12"
+  when 3;
+    puts "3"
+
+end

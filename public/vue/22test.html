@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+
+    <script src="../js/vue.min.js"></script>
+
+    <style>
+        .active{
+            color:red;
+        }
+        .bold{
+            font-size:bold;
+        }
+    </style>
+</head>
+    <body>
+
+    </body>
+</html>
+
+<script>
+
+    //vm 检查数据变化 并更新视图
+    var vm1 = new Vue({
+        data:{a:1}
+    });
+
+    vm1.a = 2; //响应的
+    vm1.b = 3; //是非响应的
+
+    //Vue 不允许在已经创建的实例上动态添加新的根级响应式属性(root-level reactive property)
+    vm1.$set("a",4);
+
+
+</script>

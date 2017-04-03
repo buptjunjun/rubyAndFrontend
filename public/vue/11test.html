@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+
+    <script src="../js/vue.min.js"></script>
+
+    <style>
+        .active{
+            color:red;
+        }
+        .bold{
+            font-size:bold;
+        }
+    </style>
+</head>
+    <body>
+       <!--每个-->
+
+    <div id="example">
+        <span>{{a}}</span>
+    </div>
+
+
+    <div id="el1">
+        <span>{{msg}}</span> <!--{{会输出纯文本}}-->
+        <span v-html="msg"></span> <!--输出html -->
+        <div v-bind:id="id">id={{id}}</div><!--{{}}不能在属性中用{{}}只能用 v-bind:attr -->
+        <div v-bind:id="id.split('').reverse().join('-')">id={{ id.split('').reverse().join('-')}}</div><!-- 支持表达式 -->
+
+        <!--指令的职责就是当其表达式的值改变时相应地将某些行为应用到 DOM 上-->
+        <p v-if="seen">Now you seen</p>
+
+        <!-- 指令能接受一个参数 -->
+        <p v-bind:href="getHref()" >v-bind:href=getHref()</p><!--v-bind用来响应地更新html属性,href 与 getHref返回的表达式进行结合~-->
+        <p v-on:click="clickMe" id="click-id">v-on:click=clickMe</p> <!-- v-on 指令，它用于监听 DOM 事件-->
+
+
+        <!--修饰符 -->
+        <!--prevent会调用event.preventDefault()-->
+        <form v-on:submit.prevent="onSubmit" method="get">
+            <button>提交</button>
+        </form>
+
+        <!--过滤器 可用于mustache插值或者v-bind-->
+        <p v-bind:id="id|capitalize">过滤器 {{id|capitalize}} </p>
+
+        <!-- 指令缩写，可以使用@或者: -->
+        <p :id="id|capitalize">过滤器 {{id|capitalize}} </p>
+        <p @click="clickMe" id="click-id">v-on:click=clickMe</p> <!-- v-on 指令，它用于监听 DOM 事件-->
+
+        <!-- 计算属性 -->
+        <div :id="reversed_id">reversed_id:{{reversed_id}}</div>
+        <div >{{fullName}}</div>
+    </div>
+
+    <!--watcher的example-->
+    <div id="watch-example">
+        <p>
+            ask a yes/no question <input v-model="question"><!--input的值与context中的quesiton进行绑定 -->
+        </p>
+        <p>{{answer}}</p>
+    </div>
+
+
+
+
+    <!--绑定class或者Style:绑定class-->
+    <div id="binding-example">
+        <div class="exists_class" v-bind:class="{ active: isActive, 'bold': isBold }" >
+            bind class test
+        </div>
+    </div>
+
+    <!-- 条件渲染 -->
+     <div id="condition-render">
+       <h1 v-if="ok">Yes</h1>
+       <h1 v-else>No</h1>
+
+
+       <!--但是如果我们想切换多个元素呢？此时我们可以把一个 <template> 元素当做包装元素，并在上面使用 v-if。最终的渲染结果不会包含 <template> 元素-->
+       <template  v-if="ok">
+            <span>ok template</span>
+       </template>
+       <template v-else>
+           <span>false template</span>
+           <span>------</span>
+       </template>
+
+
+       <template v-if="login_type == 'username' ">
+           <label>user name:</label>
+           <input placeholder="enter your user name" :key="1">
+       </template>
+       <template v-else>
+           <label>email:</label>
+           <input placeholder="enter your email" :key="1">
+       </template>
+       <button v-on:click="toggle">toggle</button>
+     </div>
+
+     <!-- 列表渲染 -->
+     <div id="list-render">
+          <ul>
+              <li v-for="(item,index) in items"  v-on:click="show_message">{{index}}-{{item.message}}</li> <!--带index-->
+          </ul>
+
+         <span>使用template</span>
+         <div>
+             <template v-for="(item,index) in items">
+                 <span>index:{{index}}</span>
+                 <span>{{item.message}}</span><br>
+             </template>
+         </div>
+
+         <span>v-for对对象的属性进行迭代</span>
+         <ul v-for="(key,value) in testobj">
+            <li v-if="key != 'desc'">{{key}}->{{value}}</li>
+            <li v-else="key != 'desc'">{{key}}->{{value.school}}</li>
+         </ul>
+
+         <span>component渲染的时候,v-for不会自动注入到component中</span>
+         <div>
+            <input v-model="newTodoText" v-on:keyup.enter="add_new_item">
+            <ul>
+                <div is="todo-item" v-for="item in todos" v-bind:title="item" v-on:remove="todos.splice($index,1)"></div>
+            </ul>
+         </div>
+     </div>
+
+
+
+
+    <p>===========================事件监听===========================</p>
+    <div id="event_listen">
+        <button v-on:click="sayhi">sayhi </button>
+        <button v-on:click="say('hi')">sayhi 内联</button>
+
+        <!-- 传一个event进去 -->
+        <button v-on:click="warn('this is warning',$event)">warning</button>
+    </div>
+
+
+
+    <p>v-model 在表单数据上进行数据双向绑定，他会根据控件类型自动选取正确的方法来更新元素</p>
+    <div id="form-bind">
+       <p>input:</p>
+       <input v-model="message1" placeholder="edit me">
+       <p>Message is: {{ message1 }}</p>
+       <br>
+
+       <p>复选框:</p>
+       <div id="112233">
+           <template v-for="item in names">
+               <input type="checkbox" name="username" value="{{item}}" id="{{$index}}" v-model="checkedNames">
+               <label for="{{$index}}">{{item}}</label>
+           </template>
+       </div>
+        <span>Checked names: {{ checkedNames }}</span>
+
+
+        <p>单选框:</p>
+        <div >
+            <template v-for="item in names">
+                <input type="radio" name="username1" value="{{item}}" id="{{$index}}-radio" v-model="checkedNames1">
+                <label for="{{$index}}-radio">{{item}}</label>
+            </template>
+        </div>
+        <span>Checked names: {{ checkedNames1 }}</span>
+
+
+        <p>选择列表:</p>
+        <div >
+            <select name="selected_name"  v-model="select_name" multiple >
+                <option v-for="item in names" value="{{item}}">{{item}}</option>
+            </template>
+            </select>
+        </div>
+        <span>Checked names: {{ select_name }}</span>
+
+    </div>
+
+
+
+
+
+    <p>======组件======</p>
+    <div id="component-test">
+        <global-component></global-component>
+
+        <!--局部注册组件-->
+        <child-component></child-component>
+
+        <!-- 父子组件 -->
+        <child message="hello!" date="2017"></child> <!--静态prop-->
+        <child v-bind:message="child_data" date="2017"></child> <!--动态的prop-->
+
+    </div>
+
+    <!-- 会报错 -->
+    <child-component></child-component>
+
+
+    <div id="button-counter-example">
+        <p>{{ total }}</p>
+        <!--extra="1" 传递进去的是string -->
+        <!-- v-bind:extra="1" 表示“1”是一个javascript表达式-->
+        <button-counter v-on:increment="incrementTotal" v-bind:extra="1" ></button-counter>
+        <button-counter v-on:increment="incrementTotal" v-bind:extra="2"></button-counter>
+    </div>
+
+
+
+
+
+    <div id="currency-input-example">
+        <p>{{total}}</p>
+        <currency-input v-model="dollar" ></currency-input>
+        <currency-input v-model="rmb"></currency-input>
+    </div>
+
+   <!--非父子组件进行通信 -->
+   <div id="currency-input-example">
+       <p>{{total}}</p>
+       <!-- v-bind:extra="1" 表示“1”是一个javascript表达式-->
+       <button-counter v-on:increment="incrementTotal" v-bind:extra="1" ></button-counter>
+       <button-counter v-on:increment="incrementTotal" v-bind:extra="2"></button-counter>
+   </div>
+
+
+
+
+    <!--slot-->
+    <div id="slot-example">
+         <slot-parent>
+             <slot-child></slot-child><br>
+             <slot-child>hello 我来自slot-parent</slot-child>
+             <slot-child>
+                 <p>hello 我来自slot-parent</p>
+                 <p slot="footer"> 来自父组件的footer</p>
+             </slot-child>
+
+             <slot-child>
+                 <p>hello 我来自slot-parent</p>
+                 <p slot="footer"> 来自父组件的footer 动态的 -{{msg1}}</p>
+             </slot-child>
+
+
+             <slot-child v.bind:param1="{msg:'hello props'}">
+                <template slot="footer" scope="props">
+                    <p>{{props.param1}}--</p>
+                </template>
+             </slot-child>
+
+         </slot-parent>
+
+
+        <!--作用域插槽-->
+        <my-awesome-list :items="items">
+            <!-- 作用域插槽也可以在这里命名 -->
+            <template slot="item" scope="props">
+                <li class="my-fancy-item">{{ props.single_item }}</li>
+            </template>
+        </my-awesome-list>
+
+
+    </div>
+
+
+
+###
+       <!-- 动态组件-->
+       <div id="dynamic-component">
+
+           <label>选择view</label>
+
+           <select name="selected_name"  v-model="cur_view"  >
+               <option v-for="item in items" v-bind:value="item">{{item}}</option>
+           </select>
+
+           <component v-bind:is="cur_view"></component>
+       </div>
+
+    </body>
+
+</html>
+
+<script>
+
+    //=========================vue的属性与方法=============================
+    //每个 Vue 实例都会代理其 data 对象里所有的属性：
+    console.log("每个 Vue 实例都会代理其 data 对象里所有的属性：");
+    var data1 = {a:1};
+    var vm = new Vue({
+        data:data1
+    });
+
+    console.log("vm.a === data1.a:"+(vm.a === data1.a));
+    vm.a = 2;
+    console.log(data1.a);
+
+    data1.a = 3
+    console.log(vm.a)
+
+    //Vue 实例暴露了一些有用的实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分
+    console.log("Vue 实例暴露了一些有用的实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分")
+    var vm1 = new Vue({
+        data:data1,
+        el:"#example"
+    })
+
+    console.log("vm1.$data === data1:"+(vm1.$data === data1));
+    console.log("vm1.$el == document.getElementById('example'):"+(vm1.$el == document.getElementById('example')));
+
+    //vm1.$data.a = 4
+    //2017-03-13 11:55:54.112 11test.html:42 new :4; old:3
+    vm1.$watch('a',function(newVal,oldVal){
+       console.log("new :"+newVal + "; old:"+oldVal);
+    });
+
+
+
+    //=========================Vue生命周期=============================
+    console.log("Vue生命周期")
+    var vm3 = new Vue({
+        data: {
+            a: 1
+        },
+        beforeCreate:function(){
+            console.log("before create:"+this.$data);
+        },
+        created: function () {
+            console.log('created: ' + this.$data.a);
+        },
+        beforeMount: function () {
+            console.log('beforeMount: ' + this.$data);
+        },
+        mounted: function () {
+            console.log('mounted: ' + this.$data.a);
+        },
+        beforeDestroy: function () {
+            console.log('beforeDestroy: ' + this.$data);
+        },
+        destroyed: function () {
+            console.log('destroyed: ' + this.$data);
+        }
+    })
+
+    //=========================Vue魔板模板语法=============================
+    console.log("Vue模板的语法")
+
+    //vm可以看做是context吧
+    var vm4 = new Vue({
+       el:"#el1",
+       data:{
+           id:"a12",
+           msg:"<span>hello</span>",
+           seen:true,
+           firstName:"Yang",
+           lastName:"Andy"
+
+
+       },
+       methods:{
+           getHref:function(){
+               return "/actions";
+           },
+           clickMe:function(event)
+           {
+             console.log(event);
+             console.log(event.target.id+" hello");
+           },
+           onSubmit:function(){
+               console.log(event.target.method)
+           }
+       },
+       filters:{
+          capitalize:function(value,arg1)
+          {
+              console.log(value+"-"+arg1)
+              return value+"-";
+          }
+       },
+       //=========================Vue计算属性=============================
+       //计算属性可以用来计算比较复杂的转换 像message.split('').reverse().join('')这种可以放在computed中
+       //计算属性和methods比较相似，但是计算属性是缓存的
+       computed:{
+            reversed_id:function()
+            {
+                console.log("computed 属性 是缓存的，只打印一次");
+                return this.id.split('').reverse().join('');
+            },
+           //计算属性默认提供了getter，也可以指定setter
+           fullName:{
+               get:function(){
+                   return this.firstName + " "+ this.lastName;
+               },
+               set:function(fullName){
+                   if(!!!fullName) return;
+                   var names = fullName.split(" ")
+                   this.firstName = names[0];
+                   this.lastName = names[1];
+               }
+           }
+
+       }
+    });
+
+    //watcher
+    new Vue({
+        el:"#watch-example",
+        data:{
+            question:"",
+            answer:"I cannot give you an answer until you ask a question!"
+        },
+        watch:{
+            question:function(newq,oldq){
+                console.log(newq+":"+oldq);
+                this.getAnswer(newq);
+            }
+        },
+        methods:{
+            getAnswer:_.debounce(function(){
+                console.log(this.question+" is getting answer");
+                var vm = this;
+                if(vm.question.indexOf('?') === -1)
+                {
+                    vm.answer="answer usually has a '?'";
+                    return;
+                }
+
+                vm.answer = "thinking";
+                axios.get("https://yesno.wtf/api")
+                        .then(function(res){
+                            vm.answer = _.capitalize(res.data.answer);
+                        }).catch(function(err){
+                            vm.answer = "Error! Could not reach the API."+error;
+                        });
+                },500)
+            }
+        }
+    );
+
+    //bind class和style
+    new Vue({
+        el:"#binding-example",
+
+        data:{
+            isActive:true,
+            isBold:true
+        }
+    })
+
+    //条件渲染
+    new Vue({
+        el:"#condition-render",
+        data:{ok:false,
+            login_type:'username'},
+        methods:{
+            toggle:function(event){
+                if(this.login_type==='username')
+                    this.login_type='email';
+                else
+                    this.login_type='username';
+            }
+        }
+    })
+
+
+    //列表渲染
+
+    //    Vue.component("todo-item",{
+    //        template:"<li> {{title}} <button v-on:click='$emit(\'remove\')'></button></li>",
+    //        props:['title']
+    //    })
+
+    Vue.component('todo-item', {
+        template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">X</button>\
+    </li>'
+        ,
+        props: ['title']
+    })
+
+    new Vue({
+        el:"#list-render",
+        data:{
+            items:[
+                {message:"Foo"},
+                {message:"Bar"}
+            ],
+            testobj:{
+                "FirstName":"Yang",
+                "LastName":"Junjun",
+                "desc":{school:"shipan middle shcool",home:"jianyang"}
+            },
+            //下面是todo-list的问题
+            newTodoText:'',
+            todos:[
+                'Do the dishes',
+                'Take out the trash',
+                'Mow the lawn'
+            ]
+        },
+        methods:{
+            show_message:function(event){
+                console.log(event.target.innerText);
+            },
+            add_new_item:function(){
+                this.todos.push(this.newTodoText);
+                this.newTodoText = "";
+            }
+        }
+    });
+
+
+
+    //事件绑定
+    new Vue({
+        el:"#event_listen",
+        methods:{
+            say:function(msg){
+              alert(msg);
+            },
+            sayhi:function(){
+                alert("say hi");
+            },
+            warn:function(msg, event){
+                if(event) event.preventDefault();
+                alert(msg);
+            }
+        }
+    });
+
+
+    new Vue({
+        el:"#form-bind",
+        data:{
+            message1:"",
+            names:['jack','queue','king'],
+            checkedNames:[],
+            checkedNames1:null,
+            select_name:null
+        },
+        methods:{
+
+        }
+    })
+
+
+    //组件
+    //对于自定义标签名，Vue.js 不强制要求遵循 W3C规则 （小写，并且包含一个短杠），尽管遵循这个规则比较好。
+    //全局注册
+    Vue.component("global-component",{
+        template:"<p>hello global component {{testdata}} </p>",
+        data:function(){ <!-- data必须是函数 -->
+            return {
+                testdata:"数据~"
+            }
+        }
+    })
+
+
+    //父子组件 单向数据流
+    //在 Vue.js 中，父子组件的关系可以总结为 props down, events up 。
+    //父组件通过 props 向下传递数据给子组件，子组件通过 events 给父组件发送消息。看看它们是怎么工作的。
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!注意!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //每次父组件更新时，子组件的所有 prop 都会更新为最新值。这意味着你不应该在子组件内部改变 prop 。如果你这么做了，Vue 会在控制台给出警告。
+    Vue.component("child",{
+        //props:['message','date'],
+        props:{message:[String,Number],
+            date:{
+                type:String,
+                default:"no date",
+                validator:function(value){
+                    return false;
+                }
+            }
+        },
+        template:"<span>child: {{message}} {{date}}</span>",
+
+    });
+
+
+    new Vue({
+        el:"#component-test",
+        data:{child_data:"this is child_data"},
+        components:{
+            'child-component':{ ////局部注册
+                data: function(){return {child_data:"child_data inner"}},
+                template:"<p>child components ({{child_data}})</p>"
+            }
+        }
+    })
+
+
+   //自定义事件 button counter
+   Vue.component("button-counter",{
+       template:'<button v-on:click="increment"> {{counter}}</button>',
+       props:{
+          extra:{
+              type:Number,
+              default:1
+          }
+       },
+       data:function(){return {counter:0}},
+       methods:{increment:function(){
+           this.counter += this.extra;
+
+           //传一个参数出去
+           //使用emit触发事件:$emit(eventName)
+           this.$emit("increment",this.extra);
+       }}
+   })
+
+
+   new Vue({
+        el:"#button-counter-example",
+        data:{total:0},
+        methods:{
+            incrementTotal:function(extra){
+                console.log(extra);
+                this.total+=extra;
+            }
+        }
+   });
+
+   //自定义表单输入组件
+   Vue.component('currency-input',{
+       template:"<span><input ref='input' v-bind:value='value' v-on:input='updateValue($event.target.value)' /></span>",
+       props:['value'],
+       methods:{
+           updateValue:function(value){
+              var formatedValue = value
+                      .trim() //删除两侧空格
+                      .slice(0,value.indexOf(".")+3); //保留2位小数
+
+               console.log("currency-input:"+formatedValue)
+               if(formatedValue !== value)
+               {
+                   console.log("this.$refs");
+                   console.log(this.$refs);
+                   this.$refs.input.value = formatedValue;
+               }
+
+               this.$emit('input',Number(formatedValue));
+           }
+       }
+   });
+
+
+
+    new Vue({
+        el:"#currency-input-example",
+        data:{
+            dollar:0.0,
+            rmb:0.0
+        },
+        computed:{
+            total:function(){
+                return this.dollar+this.rmb;
+            }
+        }
+    })
+
+    //非父子组件的通信
+    //slot 分发内容
+    Vue.component("slot-child",{
+        template:"<div>" +
+                "<h2>slot-child header</h2>" +
+                "<slot>slot-child：没有内容分发的时候会显示</slot>" +
+                "<slot  name='footer' footer-tailer=''>默认footer</slot>" +
+                "</div>",
+        props:{
+            param1:{type:String,default:"default params1"}
+        },
+        data:function(){
+            return {
+                child_msg1:"child msg1",
+                child_msg2:"child msg1"
+            }
+        }
+    })
+
+    Vue.component("slot-parent",{
+        template:"<div>" +
+                "<h2>slot-parent header</h2>" +
+                "<slot>slot-parent：没有内容分发的时候会显示</slot>"+
+                "</div>"
+    })
+
+    Vue.component("my-awesome-list",{
+        template:'<ul>'+
+            '<slot name="item" v-for="item in items" :single_item="item"></slot></ul>',
+        props:['items']
+    })
+
+
+    new Vue({
+        el:"#slot-example",
+        data:{msg1:"msg1",msg2:"msg2",items:[{text:'item1'},{text:'item2'}]}
+
+    });
+
+
+
+    var dynamic = new Vue({
+        el:"#dynamic-component",
+        data:{
+            cur_view:"home",
+            info:"dynamic-component",
+            items:['home','posts']
+        },
+        components:{
+            home:{template:"<p>home</p>"},
+            posts:{template:"<p>posts</p>"}
+        }
+
+    });
+
+
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../js/vue.js"></script>
+    <!--<script type="text/javascript" src="../js/bootstrap.min.js"></script>-->
+    <!--<link href="../css/bootstrap.min.css" />-->
+</head>
+
+<body>
+<div id="c1">
+   <myc></myc>
+</div>
+
+
+<div id="c2">
+    <myc1></myc1>
+</div>
+
+
+<!--传递参数-->
+
+<div id="c3">
+    <input v-model="parentMsg">
+    <br>
+   <child :message="parentMsg"></child>
+</div>
+
+
+
+<div id="counter-event-example">
+    <p>{{total}}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+</div>
+
+
+
+<script src="https://cdn.rawgit.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e/raw/98739fb8ac6779cb2da11aaa9ab6032e52f3be00/currency-validator.js"></script>
+
+<div id="app">
+    <currency-input
+            label="Price"
+            v-model="price"
+            >
+
+            </currency-input>
+
+    <p>Total: ${{ total }}</p>
+</div>
+
+</body>
+
+</html>
+
+<script>
+
+    Vue.component('myc',{
+      data:{a:1},
+      template:"<div>my component {{a}}</div>"
+    });
+
+
+    var app7 = new Vue({
+        el:'#c1'
+    });
+
+
+
+    var myc1={
+        data:function () {
+            return {a:1 }
+        },
+        template:'<div>A custom component! {{a}}</div>'
+    }
+
+    var app8 = new Vue({
+        el:"#c2",
+        data:function () {
+            return {a:1 }
+        },
+        components:{
+            'myc1':myc1
+        }
+    });
+
+
+
+    Vue.component('child',{
+        props:['message'],
+        data:function(){msg:this.message},
+        template:'<span>{{message}}</span>'
+    })
+
+    new Vue({
+        el:"#c3"
+    })
+
+
+    Vue.component("button-counter",{
+        template:'<button v-on:click="increment"> {{counter}} </button>',
+        data:function(){
+            return {counter:0}
+        },
+        methods:{
+            increment:function(){
+                this.counter += 1;
+                this.$emit('increment',this.counter); //emit带参数
+            }
+        }
+    });
+
+
+    new Vue({
+        el:"#counter-event-example",
+        data:{total:0},
+        methods:{
+            incrementTotal:function(counter){
+                console.log(counter);
+                this.total+=1;
+            }
+        }
+    })
+
+
+    Vue.component('currency-input', {
+        template: '<input v-bind:value="value" ref="input" v-on:input="updateValue($event.target.value)" />',
+        props: ['value'],
+        methods: {
+            // 不是直接更新值，而是使用此方法来对输入值进行格式化和位数限制
+            updateValue: function (value) {
+                // 通过 input 事件发出数值
+
+                console.log("--"+value);
+                this.$emit('input', Number(value).toFixed(2))
+            }
+        }
+    });
+
+
+    new Vue({
+       el:"#app",
+       data:{
+           price:0
+       },
+       computed:{
+           total:function(){return (this.price+1);}
+       }
+    });
+
+</script>
+
+
+

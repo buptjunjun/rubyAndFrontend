@@ -1,0 +1,94 @@
+20160615110356: user_id: 37:杨人宇 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=4&status=8&order=desc'> 草图</a> 中有1 个任务已经过期
+#<DataTask id: 19333, project_id: 1, object_data_id: 2928, user_id: 37, created_at: "2016-04-13 06:11:46", updated_at: "2016-05-09 07:54:03", task_id: 4, status: 3, start_time: "2016-05-09 07:54:03">
+20160615110356: user_id: 77:胡家伟 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=4&status=8&order=desc'> 草图</a> 中有9 个任务已经过期
+#<DataTask id: 40522, project_id: 1, object_data_id: 5401, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40524, project_id: 1, object_data_id: 5414, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40526, project_id: 1, object_data_id: 5422, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40528, project_id: 1, object_data_id: 5469, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40530, project_id: 1, object_data_id: 5609, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40532, project_id: 1, object_data_id: 5611, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40536, project_id: 1, object_data_id: 5851, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40538, project_id: 1, object_data_id: 5855, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40540, project_id: 1, object_data_id: 5862, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 4, status: 3, start_time: "2016-05-24 09:35:40">
+20160615110356: user_id: 102:单醇洋 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=4&status=8&order=desc'> 草图</a> 中有5 个任务已经过期
+#<DataTask id: 41612, project_id: 1, object_data_id: 5286, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 4, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41614, project_id: 1, object_data_id: 5299, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 4, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41618, project_id: 1, object_data_id: 5485, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 4, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41620, project_id: 1, object_data_id: 5520, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 4, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41622, project_id: 1, object_data_id: 5592, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 4, status: 3, start_time: "2016-05-25 09:21:01">
+---
+20160615110356: user_id: 42:刘超 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=6&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 5366, project_id: 1, object_data_id: 988, user_id: 42, created_at: "2016-03-07 19:16:11", updated_at: "2016-03-07 19:16:11", task_id: 6, status: 3, start_time: "2016-03-07 19:16:11">
+20160615110356: user_id: 37:杨人宇 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=6&status=8&order=desc'> 成图</a> 中有2 个任务已经过期
+#<DataTask id: 15324, project_id: 1, object_data_id: 2406, user_id: 37, created_at: "2016-04-01 02:50:59", updated_at: "2016-04-01 02:50:59", task_id: 6, status: 3, start_time: "2016-04-01 02:50:59">
+#<DataTask id: 19332, project_id: 1, object_data_id: 2928, user_id: 37, created_at: "2016-04-13 06:11:46", updated_at: "2016-05-09 07:54:03", task_id: 6, status: 3, start_time: "2016-05-09 07:54:03">
+20160615110356: user_id: 77:胡家伟 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=6&status=8&order=desc'> 成图</a> 中有9 个任务已经过期
+#<DataTask id: 40521, project_id: 1, object_data_id: 5401, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40523, project_id: 1, object_data_id: 5414, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40525, project_id: 1, object_data_id: 5422, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40527, project_id: 1, object_data_id: 5469, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40529, project_id: 1, object_data_id: 5609, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40531, project_id: 1, object_data_id: 5611, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40535, project_id: 1, object_data_id: 5851, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40537, project_id: 1, object_data_id: 5855, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+#<DataTask id: 40539, project_id: 1, object_data_id: 5862, user_id: 77, created_at: "2016-05-24 09:35:40", updated_at: "2016-05-24 09:35:40", task_id: 6, status: 3, start_time: "2016-05-24 09:35:40">
+20160615110356: user_id: 102:单醇洋 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=6&status=8&order=desc'> 成图</a> 中有6 个任务已经过期
+#<DataTask id: 41611, project_id: 1, object_data_id: 5286, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 6, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41613, project_id: 1, object_data_id: 5299, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 6, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41615, project_id: 1, object_data_id: 5484, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-06-14 03:16:06", task_id: 6, status: 6, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41617, project_id: 1, object_data_id: 5485, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 6, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41619, project_id: 1, object_data_id: 5520, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 6, status: 3, start_time: "2016-05-25 09:21:01">
+#<DataTask id: 41621, project_id: 1, object_data_id: 5592, user_id: 102, created_at: "2016-05-25 09:21:01", updated_at: "2016-05-25 09:21:01", task_id: 6, status: 3, start_time: "2016-05-25 09:21:01">
+20160615110356: user_id: 97:雷洁婷 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=6&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 42595, project_id: 1, object_data_id: 5473, user_id: 97, created_at: "2016-05-27 07:21:04", updated_at: "2016-05-27 07:21:04", task_id: 6, status: 3, start_time: "2016-05-27 07:21:04">
+20160615110356: user_id: 74:雒彦龙 您在任务 <a target='_blank' href='/index/home?project_id=1&task_id=6&status=8&order=desc'> 成图</a> 中有5 个任务已经过期
+#<DataTask id: 44981, project_id: 1, object_data_id: 6220, user_id: 74, created_at: "2016-05-30 11:04:59", updated_at: "2016-05-30 11:04:59", task_id: 6, status: 3, start_time: "2016-05-30 11:04:59">
+#<DataTask id: 44983, project_id: 1, object_data_id: 6222, user_id: 74, created_at: "2016-05-30 11:04:59", updated_at: "2016-05-30 11:04:59", task_id: 6, status: 3, start_time: "2016-05-30 11:04:59">
+#<DataTask id: 44985, project_id: 1, object_data_id: 6226, user_id: 74, created_at: "2016-05-30 11:04:59", updated_at: "2016-05-30 11:04:59", task_id: 6, status: 3, start_time: "2016-05-30 11:04:59">
+#<DataTask id: 44987, project_id: 1, object_data_id: 6254, user_id: 74, created_at: "2016-05-30 11:04:59", updated_at: "2016-05-30 11:04:59", task_id: 6, status: 3, start_time: "2016-05-30 11:04:59">
+#<DataTask id: 44989, project_id: 1, object_data_id: 6260, user_id: 74, created_at: "2016-05-30 11:04:59", updated_at: "2016-05-30 11:04:59", task_id: 6, status: 3, start_time: "2016-05-30 11:04:59">
+---
+20160615110356: user_id: 22:星星 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=46&status=8&order=desc'> 草图</a> 中有1 个任务已经过期
+#<DataTask id: 31183, project_id: 5, object_data_id: 4610, user_id: 22, created_at: "2016-05-11 07:05:21", updated_at: "2016-05-11 07:08:20", task_id: 46, status: 3, start_time: "2016-05-11 07:08:20">
+20160615110356: user_id: 35:孙康 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=46&status=8&order=desc'> 草图</a> 中有1 个任务已经过期
+#<DataTask id: 31738, project_id: 5, object_data_id: 3820, user_id: 35, created_at: "2016-05-11 15:45:00", updated_at: "2016-05-12 02:28:27", task_id: 46, status: 6, start_time: "2016-05-12 02:28:27">
+20160615110356: user_id: 25:豆豆 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=46&status=8&order=desc'> 草图</a> 中有1 个任务已经过期
+#<DataTask id: 31860, project_id: 5, object_data_id: 4735, user_id: 25, created_at: "2016-05-12 02:54:07", updated_at: "2016-05-14 02:27:31", task_id: 46, status: 6, start_time: "2016-05-14 02:26:32">
+20160615110356: user_id: 44:禹然 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=46&status=8&order=desc'> 草图</a> 中有3 个任务已经过期
+#<DataTask id: 34808, project_id: 5, object_data_id: 5041, user_id: 44, created_at: "2016-05-16 07:00:52", updated_at: "2016-05-16 07:00:52", task_id: 46, status: 3, start_time: "2016-05-16 07:00:52">
+#<DataTask id: 34822, project_id: 5, object_data_id: 5055, user_id: 44, created_at: "2016-05-16 07:00:52", updated_at: "2016-05-16 07:00:52", task_id: 46, status: 3, start_time: "2016-05-16 07:00:52">
+#<DataTask id: 42698, project_id: 5, object_data_id: 5714, user_id: 44, created_at: "2016-05-27 08:53:59", updated_at: "2016-05-27 08:53:59", task_id: 46, status: 3, start_time: "2016-05-27 08:53:59">
+20160615110356: user_id: 41:汤佳欣 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=46&status=8&order=desc'> 草图</a> 中有2 个任务已经过期
+#<DataTask id: 35237, project_id: 5, object_data_id: 5093, user_id: 41, created_at: "2016-05-17 02:22:57", updated_at: "2016-05-17 02:22:57", task_id: 46, status: 3, start_time: "2016-05-17 02:22:57">
+#<DataTask id: 44923, project_id: 5, object_data_id: 6262, user_id: 41, created_at: "2016-05-30 09:50:08", updated_at: "2016-05-30 09:50:08", task_id: 46, status: 3, start_time: "2016-05-30 09:50:08">
+20160615110356: user_id: 36:汪洋 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=46&status=8&order=desc'> 草图</a> 中有2 个任务已经过期
+#<DataTask id: 44125, project_id: 5, object_data_id: 6044, user_id: 36, created_at: "2016-05-30 04:30:09", updated_at: "2016-06-12 01:14:03", task_id: 46, status: 6, start_time: "2016-05-30 04:30:09">
+#<DataTask id: 44133, project_id: 5, object_data_id: 6189, user_id: 36, created_at: "2016-05-30 04:30:09", updated_at: "2016-05-30 04:30:09", task_id: 46, status: 3, start_time: "2016-05-30 04:30:09">
+---
+20160615110356: user_id: 22:星星 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 31182, project_id: 5, object_data_id: 4610, user_id: 22, created_at: "2016-05-11 07:05:21", updated_at: "2016-05-11 07:08:20", task_id: 48, status: 3, start_time: "2016-05-11 07:08:20">
+20160615110356: user_id: 46:乌兰其木格 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 31351, project_id: 5, object_data_id: 4675, user_id: 46, created_at: "2016-05-11 08:05:12", updated_at: "2016-05-11 08:05:12", task_id: 48, status: 3, start_time: "2016-05-11 08:05:12">
+20160615110356: user_id: 35:孙康 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 31737, project_id: 5, object_data_id: 3820, user_id: 35, created_at: "2016-05-11 15:45:00", updated_at: "2016-05-12 02:28:27", task_id: 48, status: 6, start_time: "2016-05-12 02:28:27">
+20160615110356: user_id: 25:豆豆 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 31859, project_id: 5, object_data_id: 4735, user_id: 25, created_at: "2016-05-12 02:54:07", updated_at: "2016-05-14 02:26:32", task_id: 48, status: 3, start_time: "2016-05-14 02:26:32">
+20160615110356: user_id: 44:禹然 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有6 个任务已经过期
+#<DataTask id: 34807, project_id: 5, object_data_id: 5041, user_id: 44, created_at: "2016-05-16 07:00:52", updated_at: "2016-05-16 07:00:52", task_id: 48, status: 3, start_time: "2016-05-16 07:00:52">
+#<DataTask id: 34821, project_id: 5, object_data_id: 5055, user_id: 44, created_at: "2016-05-16 07:00:52", updated_at: "2016-05-16 07:00:52", task_id: 48, status: 3, start_time: "2016-05-16 07:00:52">
+#<DataTask id: 34825, project_id: 5, object_data_id: 5060, user_id: 44, created_at: "2016-05-16 07:00:52", updated_at: "2016-05-30 08:17:21", task_id: 48, status: 3, start_time: "2016-05-30 08:17:21">
+#<DataTask id: 42695, project_id: 5, object_data_id: 5699, user_id: 44, created_at: "2016-05-27 08:53:59", updated_at: "2016-05-27 08:53:59", task_id: 48, status: 3, start_time: "2016-05-27 08:53:59">
+#<DataTask id: 42697, project_id: 5, object_data_id: 5714, user_id: 44, created_at: "2016-05-27 08:53:59", updated_at: "2016-05-27 08:53:59", task_id: 48, status: 3, start_time: "2016-05-27 08:53:59">
+#<DataTask id: 42699, project_id: 5, object_data_id: 5731, user_id: 44, created_at: "2016-05-27 08:53:59", updated_at: "2016-05-27 08:53:59", task_id: 48, status: 3, start_time: "2016-05-27 08:53:59">
+20160615110356: user_id: 41:汤佳欣 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有2 个任务已经过期
+#<DataTask id: 35236, project_id: 5, object_data_id: 5093, user_id: 41, created_at: "2016-05-17 02:22:57", updated_at: "2016-05-17 02:22:57", task_id: 48, status: 3, start_time: "2016-05-17 02:22:57">
+#<DataTask id: 44922, project_id: 5, object_data_id: 6262, user_id: 41, created_at: "2016-05-30 09:50:08", updated_at: "2016-05-30 09:50:08", task_id: 48, status: 3, start_time: "2016-05-30 09:50:08">
+20160615110356: user_id: 37:杨人宇 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 40907, project_id: 5, object_data_id: 5568, user_id: 37, created_at: "2016-05-25 03:00:07", updated_at: "2016-05-25 03:00:07", task_id: 48, status: 3, start_time: "2016-05-25 03:00:07">
+20160615110356: user_id: 96:朱昱斻 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有1 个任务已经过期
+#<DataTask id: 41781, project_id: 5, object_data_id: 5700, user_id: 96, created_at: "2016-05-26 02:57:15", updated_at: "2016-05-26 02:57:15", task_id: 48, status: 3, start_time: "2016-05-26 02:57:15">
+20160615110356: user_id: 36:汪洋 您在任务 <a target='_blank' href='/index/home?project_id=5&task_id=48&status=8&order=desc'> 成图</a> 中有2 个任务已经过期
+#<DataTask id: 44124, project_id: 5, object_data_id: 6044, user_id: 36, created_at: "2016-05-30 04:30:09", updated_at: "2016-05-30 04:30:09", task_id: 48, status: 3, start_time: "2016-05-30 04:30:09">
+#<DataTask id: 44132, project_id: 5, object_data_id: 6189, user_id: 36, created_at: "2016-05-30 04:30:09", updated_at: "2016-05-30 04:30:09", task_id: 48, status: 3, start_time: "2016-05-30 04:30:09">
+---
+---

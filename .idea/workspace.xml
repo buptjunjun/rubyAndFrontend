@@ -62,16 +62,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tw_user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../twf/app/models/tw_user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="120">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
@@ -114,12 +104,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_twitter.rake" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="test_twitter.rake" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../twf/lib/tasks/test_twitter.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5191257" vertical-offset="70" max-vertical-offset="825">
+            <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="825">
               <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="11test.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/vue/11test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.8278804" vertical-offset="5070" max-vertical-offset="10965">
+              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+              <folding>
+                <marker date="1489995285000" expanded="true" signature="13403:13490" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -208,10 +210,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="411" />
-    <option name="y" value="401" />
-    <option name="width" value="1884" />
-    <option name="height" value="878" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="873" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -249,8 +250,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,10 +277,10 @@
     </key>
   </component>
   <component name="RunManager" selected="Ruby.test_twitter">
-    <configuration default="false" name="module_inherit" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+    <configuration default="false" name="html_prase" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="rubyAndFrontend" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/modules/ruby_meta" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/modules/http" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
@@ -292,7 +293,7 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/modules/ruby_meta/module_inherit.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/modules/http/html_prase.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
@@ -558,20 +559,22 @@
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Rake.test: rubyAndFrontend" />
-      <item index="1" class="java.lang.String" itemvalue="Rake.spec: rubyAndFrontend" />
-      <item index="2" class="java.lang.String" itemvalue="Rails.Production: rubyAndFrontend" />
-      <item index="3" class="java.lang.String" itemvalue="Rails.Development: rubyAndFrontend" />
-      <item index="4" class="java.lang.String" itemvalue="Rake.test: twf" />
-      <item index="5" class="java.lang.String" itemvalue="Rake.spec: twf" />
-      <item index="6" class="java.lang.String" itemvalue="Rails.Production: twf" />
-      <item index="7" class="java.lang.String" itemvalue="Rails.Development: twf" />
-      <item index="8" class="java.lang.String" itemvalue="Ruby.module_inherit" />
-      <item index="9" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_fail: twf" />
-      <item index="10" class="java.lang.String" itemvalue="Ruby.test_model" />
-      <item index="11" class="java.lang.String" itemvalue="IRB console.Rails console: twf" />
-      <item index="12" class="java.lang.String" itemvalue="Ruby.test_twitter" />
+    <list size="15">
+      <item index="0" class="java.lang.String" itemvalue="Ruby.chapter3" />
+      <item index="1" class="java.lang.String" itemvalue="Ruby.test_params" />
+      <item index="2" class="java.lang.String" itemvalue="Rake.test: rubyAndFrontend" />
+      <item index="3" class="java.lang.String" itemvalue="Rake.spec: rubyAndFrontend" />
+      <item index="4" class="java.lang.String" itemvalue="Rails.Production: rubyAndFrontend" />
+      <item index="5" class="java.lang.String" itemvalue="Rails.Development: rubyAndFrontend" />
+      <item index="6" class="java.lang.String" itemvalue="Rake.test: twf" />
+      <item index="7" class="java.lang.String" itemvalue="Rake.spec: twf" />
+      <item index="8" class="java.lang.String" itemvalue="Rails.Production: twf" />
+      <item index="9" class="java.lang.String" itemvalue="Rails.Development: twf" />
+      <item index="10" class="java.lang.String" itemvalue="Ruby.html_prase" />
+      <item index="11" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_fail: twf" />
+      <item index="12" class="java.lang.String" itemvalue="Ruby.test_model" />
+      <item index="13" class="java.lang.String" itemvalue="IRB console.Rails console: twf" />
+      <item index="14" class="java.lang.String" itemvalue="Ruby.test_twitter" />
     </list>
     <recent_temporary>
       <list size="5">
@@ -579,7 +582,7 @@
         <item index="1" class="java.lang.String" itemvalue="IRB console.Rails console: twf" />
         <item index="2" class="java.lang.String" itemvalue="Ruby.test_model" />
         <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_fail: twf" />
-        <item index="4" class="java.lang.String" itemvalue="Ruby.module_inherit" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.html_prase" />
       </list>
     </recent_temporary>
   </component>
@@ -596,7 +599,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="411" y="401" width="1884" height="878" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -604,7 +607,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17969598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18168813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17504655" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.48915988" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -612,12 +615,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32774675" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3276316" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -645,14 +648,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../twf/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="690">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs193/io.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="5229" max-vertical-offset="30945">
@@ -1010,9 +1005,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../twf/lib/tasks/test_twitter.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5191257" vertical-offset="70" max-vertical-offset="825">
+        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="825">
           <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vue/11test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8278804" vertical-offset="5070" max-vertical-offset="10965">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding>
+            <marker date="1489995285000" expanded="true" signature="13403:13490" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

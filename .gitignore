@@ -11,6 +11,10 @@
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+/log/**/*
+/tmplog
+.idea/**/*
+/.DS_Store
+tmp/**/*
 /.idea/**/*
+/.idea/workspace.xml

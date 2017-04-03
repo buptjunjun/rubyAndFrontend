@@ -1000,6 +1000,26 @@ puts (false and true) # 相当于 puts (false and true)
 puts  true && false # 相当于 puts (true && false)
 puts true & false # 相当于 puts (true & false)
 
+#
+# #redo输出
+# [1,2,3,4].each_with_index do |item,index|
+#   retrycount = 0
+#   abc = 10
+#   begin
+#     abc+=1
+#     puts  index
+#     puts abc;
+#     if index == 2
+#       a = 1/0;
+#     end
+#   rescue
+#     retrycount += 1
+#     if retrycount < 3
+#       redo #回到begin
+#     end
+#   end
+# end
+
 #retry 输出 012223
 [1,2,3,4].each_with_index do |item,index|
   retrycount = 0
