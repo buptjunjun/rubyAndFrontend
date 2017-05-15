@@ -314,7 +314,7 @@
     console.log("vm1.$el == document.getElementById('example'):"+(vm1.$el == document.getElementById('example')));
 
     //vm1.$data.a = 4
-    //2017-03-13 11:55:54.112 11test.html:42 new :4; old:3
+    //2017-03-13 11:55:54.112 test1.html:42 new :4; old:3
     vm1.$watch('a',function(newVal,oldVal){
        console.log("new :"+newVal + "; old:"+oldVal);
     });

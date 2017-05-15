@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/captionator-min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+   <body>
+   <div class="demo">
+
+       <video controls="" autobuffer="" autoplay="" loop="" id="video" width="100%">
+           <source src="xsk_h264.mp4" >
+           <track kind="captions" src="xsk.srt" srclang="en" label="English Subtitles" default />
+           <div class="message">
+               <p><strong>Sorry, you'll need an HTML5 Video capable browser to view this example.</strong></p>
+           </div>
+       </video>
+   </div>
+   </body>
+
+</html>
+<script type="text/javascript">
+    window.addEventListener("load",function(eventData) {
+        captionator.captionify();
+    });
+</script>
